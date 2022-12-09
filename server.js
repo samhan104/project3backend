@@ -29,11 +29,11 @@ app.get('/', (req,res) => {
     })
 })
 
-app.get('/seed', (req,res) => {
-    Wardrobe.create(seed, (err, data)=> {
-        res.redirect('/')
-    })
-})
+// app.get('/seed', (req,res) => {
+//     Wardrobe.create(seed, (err, data)=> {
+//         res.redirect('/')
+//     })
+// })
 
 //show
 app.get('/:id', (req,res)=> {
