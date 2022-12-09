@@ -4,6 +4,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const Wardrobe = require('./models/wardrobe.js')
+const seed = require('./models/seed')
 const cors = require('cors)')
 const app = express()
 
@@ -25,6 +26,12 @@ app.post('/', (req,res) => {
 app.get('/', (req,res) => {
     Wardrobe.find({}, (err, getWardrobe)=> {
         res.json(getWardrobe)
+    })
+})
+
+app.get('/seed', (req,res) => {
+    Wardrobe.create(seed, (err, data)=> {
+        res.redirect('/')
     })
 })
 
