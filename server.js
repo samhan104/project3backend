@@ -24,7 +24,7 @@ app.post('/', (req,res) => {
 
 app.get('/', (req,res) => {
     Wardrobe.find({}, (err, getWardrobe)=> {
-        res.json(getList)
+        res.json(getWardrobe)
     })
 })
 
