@@ -1,0 +1,24 @@
+{
+  "name": "project3backend",
+  "version": "1.0.0",
+  "description": "backend started by sam",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samhan104/project3backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samhan104/project3backend/issues"
+  },
+  "homepage": "https://github.com/samhan104/project3backend#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.8.0"
+  }
+}
