@@ -3,6 +3,7 @@ const Schema = mongoose.Schema
 
 const wardrobe = Schema(
     {
+        imageURL: String, 
         type: String,
         brand: String,
         size: String, 
