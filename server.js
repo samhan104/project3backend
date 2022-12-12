@@ -8,12 +8,18 @@ const seed = require('./models/seed')
 const cors = require('cors')
 const app = express()
 
+if(process.env.NODE_ENV !== 'production') {
+    require('dotenv').config()
+}
 //=================================================
 //                   MIDDLEWARE
 //=================================================
 app.use(express.json())
 app.use(cors())
-
+let PORT = 3000;
+if(process.env.PORT){
+	PORT = process.env.PORT
+}
 //=================================================
 //                     ROUTES
 //=================================================
@@ -81,8 +87,8 @@ app.delete('/:id', (req,res) => {
 //=================================================
 //                   CONNECTION
 //=================================================
-app.listen(3000, () => {
-    console.log('listening')
+app.listen(process.env.PORT || 3000, ()=>{
+	console.log('listening'); 
 })
 
 mongoose.connect('mongodb+srv://samhan104:hHkGCYhVATr1oHGi@cluster0.gr8z5kk.mongodb.net/?retryWrites=true&w=majority', () => {
