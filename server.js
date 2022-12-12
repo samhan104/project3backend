@@ -42,6 +42,19 @@ app.get('/:id', (req,res)=> {
     })
 })
 
+//sorting
+app.get('/filter', (req, res) => {
+    Wardrobe.distinct('type', (err, foundWardrobe) => {
+        res.json(foundWardrobe)
+    })
+})
+
+app.get('/:setFilter', (req, res) => {
+    Wardrobe.find({type:req.params.setFilter}, (err, foundWardrobe) => {
+        res.json(foundWardrobe)
+    })
+})
+
 //Update
 //edit
 app.get('/:id/edit', (req,res) => {
