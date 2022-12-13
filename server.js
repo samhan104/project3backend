@@ -70,7 +70,7 @@ app.get('/:id/edit', (req,res) => {
 })
 
 //update
-app.put('/:id/', (req,res) => {
+app.put('/:id', (req,res) => {
     Wardrobe.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err,updateWardrobe)=>[
         res.json(updateWardrobe)
     ])
