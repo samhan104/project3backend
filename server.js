@@ -50,7 +50,7 @@ app.get('/:id', (req,res)=> {
 
 //sorting
 app.get('/filter', (req, res) => {
-    Wardrobe.distinct('type', (err, foundWardrobe) => {
+    Wardrobe.distinct("type", (err, foundWardrobe) => {
         res.json(foundWardrobe)
     })
 })
