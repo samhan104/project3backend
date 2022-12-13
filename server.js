@@ -5,6 +5,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const Wardrobe = require('./models/wardrobe.js')
 const seed = require('./models/seed')
+const Filter = require('./controllers/filter')
 const cors = require('cors')
 const app = express()
 
@@ -41,23 +42,12 @@ app.get('/', (req,res) => {
 //     })
 // })
 
+app.use('/filter', Filter)
+
 //show
 app.get('/:id', (req,res)=> {
     Wardrobe.findById(req.params.id, (err, findWardrobe)=> {
         res.json(findWardrobe)
-    })
-})
-
-//sorting
-app.get('/filter', (req, res) => {
-    Wardrobe.distinct('type', (err, foundWardrobe) => {
-        res.json(foundWardrobe)
-    })
-})
-
-app.get('/:setFilter', (req, res) => {
-    Wardrobe.find({type:req.params.setFilter}, (err, foundWardrobe) => {
-        res.json(foundWardrobe)
     })
 })
 
